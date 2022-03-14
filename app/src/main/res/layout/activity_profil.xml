@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profil"
+    android:background="#FFFF">
+
+    <ImageButton
+        android:id="@+id/cofnij_profil_btn"
+        android:layout_width="69dp"
+        android:layout_height="56dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/lewo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/profil_ustawienia">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nick_ustawienia"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="95dp"
+            android:text="Mati2151"
+            android:textColor="@color/black"
+            android:textSize="54dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ustawienia_tekst"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+
+        <TextView
+            android:id="@+id/zmiana_nazwy"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:text="Zmień nazwę"
+            android:textColor="@color/black"
+            android:textSize="25dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/zmiana_hasla"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:text="Zmień hasło"
+            android:textColor="@color/black"
+            android:textSize="25dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/zmiana_zdjecia"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:text="Zmień zdjęcie"
+            android:textColor="@color/black"
+            android:textSize="25dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/zmiana_opis"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:text="Opis"
+            android:textColor="@color/black"
+            android:textSize="25dp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/zarzadzanie_udo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="25dp"
+            android:text="Zarządzanie udostępnianiem"
+            android:textColor="@color/black"
+            android:textSize="25dp">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/img_btn_wyloguj"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/przycisk_wyloguj"
+        android:text="Wyloguj"
+        android:textColor="#ff0000"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+    </Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
