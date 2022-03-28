@@ -54,40 +54,19 @@ class glowna : AppCompatActivity() {
             val intent = Intent(this,Profil::class.java)
             startActivity(intent)
         }
-        //Ukrycie Pop upów
-        pop_up.setVisibility(View.GONE);
-        pop_up_powiadomienia.setVisibility(View.GONE);
+
 
         //Naciśnięcie na stokrotkę
         stokrotka_btn.setOnClickListener{
-            plaski_btn_pop_up_trans.getBackground().setAlpha(0);
-            pop_up.setVisibility(View.VISIBLE);
-        }
-
-        //Naciśnięcie na widoczny płaski przycisk
-        plaski_button_pop_up.setOnClickListener{
-            pop_up.setVisibility(View.GONE);
-        }
-
-        //Naciśnięcie na nie widoczny płaski przycisk
-        plaski_btn_pop_up_trans.setOnClickListener{
-            pop_up.setVisibility(View.GONE);
+            val intent2 = Intent(this,ustawienia_pop_up::class.java)
+            startActivity(intent2)
         }
 
         //Naciśnięcie na ikone powiadomień
         powiadomienia_btn.setOnClickListener{
-            plaski_btn_pop_up_powiadomienia_trans.getBackground().setAlpha(0);
-            pop_up_powiadomienia.setVisibility(View.VISIBLE)
-        }
-
-        //Naciśnięcie na widoczny płaski przycisk
-        plaski_btn_pop_up_powiadomienia.setOnClickListener{
-            pop_up_powiadomienia.setVisibility(View.GONE)
-        }
-
-        //Naciśnięcie na nie widoczny płaski przycisk
-        plaski_btn_pop_up_powiadomienia_trans.setOnClickListener{
-            pop_up_powiadomienia.setVisibility(View.GONE)
+            val intent3 = Intent(this,notyfikacje_pop_up::class.java)
+            startActivity(intent3
+            )
         }
 
     }
