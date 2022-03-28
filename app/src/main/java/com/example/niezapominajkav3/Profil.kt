@@ -15,7 +15,7 @@ class Profil : AppCompatActivity() {
 
         //Naciśnięcie na przycisk cofnij
         cofnij_profil_btn.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,glowna::class.java)
             startActivity(intent)
         }
     }
