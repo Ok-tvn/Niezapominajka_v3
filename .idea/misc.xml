@@ -5,8 +5,17 @@
       <map>
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/background_glowna.xml" value="0.2265" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_cztery.xml" value="0.2095" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_cztery_kolo.xml" value="0.2095" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_dwa.xml" value="0.2095" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_dwa_kolo.xml" value="0.2095" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_jeden.xml" value="0.2095" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_jeden_kolo.xml" value="0.2095" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_trzy.xml" value="0.2095" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/figura_trzy_kolo.xml" value="0.2095" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/kolo_czerwone.xml" value="0.2265" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/kolo_niebieskie.xml" value="0.2095" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/kropka.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/pasek_dol.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/plaski_btn.xml" value="0.124" />
@@ -15,10 +24,12 @@
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/profil_ustawienia.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/przycisk_wyloguj.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/transparent_btn_dlugi.xml" value="0.124" />
-        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_notyfikacje_pop_up.xml" value="0.22826086956521738" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_notyfikacje_wyswietlanie.xml" value="0.20208333333333334" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_profil.xml" value="0.2108843537414966" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_ustawienia_pop_up.xml" value="0.22826086956521738" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_wazne.xml" value="0.20208333333333334" />
       </map>
     </option>
   </component>

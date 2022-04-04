@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".wazne_activity"
+            android:exported="false" />
+        <activity
+            android:name=".notyfikacje"
+            android:exported="false" />
+        <activity
+            android:name=".notyfikacje_wyswietlanie"
+            android:exported="false" />
+        <activity
             android:name=".ustawienia_pop_up"
             android:exported="false" />
         <activity

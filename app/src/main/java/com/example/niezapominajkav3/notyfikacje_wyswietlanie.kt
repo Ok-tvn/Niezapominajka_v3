@@ -3,16 +3,13 @@ package com.example.niezapominajkav3
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.view.View
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.LinearLayout
 
-class notyfikacje_pop_up : AppCompatActivity() {
+class notyfikacje_wyswietlanie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notyfikacje_pop_up)
+        setContentView(R.layout.activity_notyfikacje_wyswietlanie)
 
         //Niewidoczne przyciski deklaracja
         var plaski_btn_pop_up_powiadomienia_trans = findViewById<LinearLayout>(R.id.plaski_btn_pop_up_powiadomienia_trans);

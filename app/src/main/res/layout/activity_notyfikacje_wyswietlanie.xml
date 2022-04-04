@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/img_butt6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#404040"
+    tools:context=".notyfikacje_wyswietlanie">
+
+    <LinearLayout
+        android:id="@+id/powiadomienia_pop_up"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/powiadomienia_pop_up"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/plaski_btn_pop_up_powiadomienia_trans"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="185dp"
+            android:background="@drawable/plaski_btn"
+            android:gravity="center_horizontal">
+            <!--android:alpha="0.0"-->
+
+            <ImageButton
+                android:id="@+id/plaski_btn_pop_up_powiadomienia"
+                android:layout_width="120dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/plaski_btn"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
