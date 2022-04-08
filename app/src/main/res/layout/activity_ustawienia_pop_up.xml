@@ -57,12 +57,26 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/img_button1"
+            <LinearLayout
+                android:id="@+id/dodaj"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="3dp"
-                android:background="@drawable/profil_ustawienia"></ImageButton>
+                android:layout_margin="3dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/profil_ustawienia">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:layout_centerInParent="true">
+
+                    </TextView>
+                </RelativeLayout>
+            </LinearLayout>
 
             <ImageButton
                 android:id="@+id/img_button2"

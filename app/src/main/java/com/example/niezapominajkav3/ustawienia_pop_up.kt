@@ -36,8 +36,14 @@ class ustawienia_pop_up : AppCompatActivity() {
 
         //Deklaracja Przycisków
         var plaski_button_pop_up = findViewById<ImageButton>(R.id.plaski_button_pop_up);
+        var dodaj = findViewById<LinearLayout>(R.id.dodaj);
 
 
+        //Naciśnięcie na widoczny płaski przycisk
+        dodaj.setOnClickListener{
+            val intent = Intent(this,dodawanie::class.java)
+            startActivity(intent)
+        }
 
         //Naciśnięcie na widoczny płaski przycisk
         plaski_button_pop_up.setOnClickListener{

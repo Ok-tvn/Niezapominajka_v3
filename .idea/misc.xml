@@ -24,12 +24,16 @@
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/profil_ustawienia.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/przycisk_wyloguj.xml" value="0.2265" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/drawable/transparent_btn_dlugi.xml" value="0.124" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_dodawanie.xml" value="0.264" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_notyfikacje_pop_up.xml" value="0.22826086956521738" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_notyfikacje_wyswietlanie.xml" value="0.20208333333333334" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_profil.xml" value="0.2108843537414966" />
-        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_ustawienia_pop_up.xml" value="0.22826086956521738" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_ustawienia_pop_up.xml" value="0.536" />
         <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/activity_wazne.xml" value="0.20208333333333334" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/opuszczana_lista.xml" value="0.22826086956521738" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/opuszczana_lista_reszta.xml" value="0.22826086956521738" />
+        <entry key="..\:/Niezapominajkav3/app/src/main/res/layout/spinner_list.xml" value="0.11302083333333333" />
       </map>
     </option>
   </component>
