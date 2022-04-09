@@ -93,6 +93,7 @@ class dodawanie : AppCompatActivity() {
     }
     fun saveTextFile(view: View) {
         try {
+            charset("UTF-8")
             val fileOutputStream: FileOutputStream = openFileOutput("mytextfile.txt", Context.MODE_PRIVATE)
             val outputWriter = OutputStreamWriter(fileOutputStream)
             outputWriter.write("Nazwa: "+editTextNazwa.text.toString()+"\r\n"+

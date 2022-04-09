@@ -26,7 +26,8 @@
             android:layout_marginBottom="15dp"
             android:text="Stwórz nowe przypomnienie"
             android:textColor="@color/white"
-            android:textSize="30dp"></TextView>
+            android:textSize="30dp">
+        </TextView>
 
         <EditText
             android:id="@+id/editTextNazwa"
@@ -36,7 +37,8 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="Nazwa"
-            android:textColor="@color/white"></EditText>
+            android:textColor="@color/white">
+        </EditText>
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +46,8 @@
             android:layout_marginLeft="5dp"
             android:text="Data"
             android:textColor="@color/white"
-            android:textSize="25dp"></TextView>
+            android:textSize="25dp">
+        </TextView>
 
         <TextView
             android:id="@+id/data_wynik"
@@ -56,8 +59,8 @@
             android:inputType="date"
             android:padding="3dp"
             android:textColor="@color/white"
-            android:textSize="35dp" />
-
+            android:textSize="35dp" >
+        </TextView>
 
     </LinearLayout>
 
@@ -75,8 +78,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
             android:text="Godzina"
-            android:textColor="@color/black"></TextView>
-
+            android:textColor="@color/black">
+        </TextView>
         <TextView
             android:id="@+id/godzina_wynik"
             android:layout_width="wrap_content"
@@ -104,6 +107,7 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="5dp">
             </TextView>
+
             <CheckBox
                 android:id="@+id/checkbox_wazne"
                 android:layout_width="wrap_content"
@@ -122,15 +126,16 @@
             android:layout_marginLeft="5dp"
             android:layout_marginBottom="1dp"
             android:text="Kategoria"
-            android:textColor="@color/black"></TextView>
+            android:textColor="@color/black">
+        </TextView>
 
         <Spinner
             android:id="@+id/spinner_dodawanie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp">
-
         </Spinner>
+
         <EditText
             android:id="@+id/Opis_txt"
             android:layout_width="match_parent"
@@ -139,10 +144,9 @@
             android:ems="10"
             android:hint="Opis"
             android:textColor="@color/black"
-            android:inputType="textPersonName"
             android:textColorHint="@color/black"
+            android:inputType="textMultiLine"
             android:layout_marginTop="5dp">
-
         </EditText>
 
 

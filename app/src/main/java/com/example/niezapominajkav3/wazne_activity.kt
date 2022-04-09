@@ -11,13 +11,13 @@ import java.io.*
 class wazne_activity : AppCompatActivity() {
 
     private var et: EditText? = null
-    private val data: String? = null
     private val file = "mytextfile.txt"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wazne)
         et = findViewById(R.id.editText1);
+        charset("UTF-8")
 
 
     }
@@ -27,6 +27,7 @@ class wazne_activity : AppCompatActivity() {
             var c: Int
             var temp = ""
             while (fin.read().also { c = it } != -1) {
+                charset("UTF-8")
                 temp = temp + Character.toString(c.toChar())
             }
             et!!.setText(temp)
