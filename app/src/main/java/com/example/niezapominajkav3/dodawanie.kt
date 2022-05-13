@@ -28,6 +28,8 @@ class dodawanie : AppCompatActivity() {
     lateinit var checkbox_wazne: CheckBox
     lateinit var spinner_dodawanie: Spinner
     lateinit var Opis_txt: EditText
+    var wszystko=" "
+    private val file = "mytextfile.txt"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,22 +94,42 @@ class dodawanie : AppCompatActivity() {
         textview_date!!.text = sdf.format(cal.getTime())
     }
     fun saveTextFile(view: View) {
+        read(view);
+        wszystko += (
+                "-------------------------------------------------" + "\r\n" +
+                "Nazwa: " + editTextNazwa.text.toString() + "\r\n" +
+                "Data: " + data_wynik.text.toString() + "\r\n" +
+                "Godzina: " + godzina_wynik.text.toString() + "\r\n" +
+                "Wazne: " + checkbox_wazne.isChecked().toString() + "\r\n" +
+                "Kategoria: " + spinner_dodawanie.getSelectedItem().toString() + "\r\n" +
+                "Opis: " + Opis_txt.text.toString() + "\r\n" +
+                "-------------------------------------------------"
+                );
         try {
             charset("UTF-8")
             val fileOutputStream: FileOutputStream = openFileOutput("mytextfile.txt", Context.MODE_PRIVATE)
             val outputWriter = OutputStreamWriter(fileOutputStream)
-            outputWriter.write("Nazwa: "+editTextNazwa.text.toString()+"\r\n"+
-                                    "Data: "+data_wynik.text.toString()+"\r\n"+
-                                    "Godzina: "+godzina_wynik.text.toString()+"\r\n"+
-                                    "Wazne: "+checkbox_wazne.isChecked().toString()+"\r\n"+
-                                    "Kategoria: "+spinner_dodawanie.getSelectedItem().toString()+"\r\n"+
-                                    "Opis: "+Opis_txt.text.toString())
+            outputWriter.write(wszystko)
             outputWriter.close()
             //display file saved message
             Toast.makeText(baseContext, "File saved successfully!", Toast.LENGTH_SHORT).show()
         }
         catch (e: Exception) {
             e.printStackTrace()
+        }
+    }
+    fun read(view: View?) {
+        try {
+            val fin = openFileInput(file)
+            var c: Int
+            var temp = ""
+            while (fin.read().also { c = it } != -1) {
+                charset("UTF-8")
+                temp = temp + Character.toString(c.toChar())
+            }
+            wszystko=temp;
+
+        } catch (e: Exception) {
         }
     }
 }
