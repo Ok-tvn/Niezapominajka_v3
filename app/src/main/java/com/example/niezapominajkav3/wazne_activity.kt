@@ -1,5 +1,7 @@
 package com.example.niezapominajkav3
 
+import ItemsViewModel
+import RecycleAdaper
 import android.content.Context
 import android.os.Bundle
 import android.view.Gravity
@@ -11,6 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.io.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class wazne_activity : AppCompatActivity() {
 
@@ -20,8 +24,7 @@ class wazne_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wazne)
-        et = findViewById(R.id.editText1);
-        charset("UTF-8")
+
 
         // creating TextView programmatically
         val tv_dynamic = TextView(this)
@@ -29,7 +32,28 @@ class wazne_activity : AppCompatActivity() {
         tv_dynamic.text = "This is a dynamic TextView generated programmatically in Kotlin"
 
         // add TextView to LinearLayout
-        ll_main_layout.addView(tv_dynamic)
+        //ll_main_layout.addView(tv_dynamic)
+
+        // getting the recyclerview by its id
+        val recyclerview = findViewById<RecyclerView>(R.id.recylerview_wazne)
+
+        // this creates a vertical layout Manager
+        recyclerview.layoutManager = LinearLayoutManager(this)
+
+        // ArrayList of class ItemsViewModel
+        val data = ArrayList<ItemsViewModel>()
+
+        // This loop will create 20 Views containing
+        // the image with the count of view
+        for (i in 1..20) {
+            data.add(ItemsViewModel(R.drawable.bell, "Item " + i))
+        }
+
+        // This will pass the ArrayList to our Adapter
+        val adapter = RecycleAdaper(data)
+
+        // Setting the Adapter with the recyclerview
+        recyclerview.adapter = adapter
 
     }
 
@@ -45,8 +69,8 @@ class wazne_activity : AppCompatActivity() {
             }
             et!!.setText(temp)
             File(file).forEachLine {
-                if(it=="imie"){
-                    println(it.split(" ").filter { it != "imie:" }.joinToString(" "))
+                if(it=="nazwa"){
+                    println(it.split(" ").filter { it != "nazwa:" }.joinToString(" "))
 
                 }
             }
