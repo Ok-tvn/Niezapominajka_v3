@@ -18,5 +18,13 @@ tools:context=".wazne_activity">
 
     </ScrollView>
 
+    <Button
+        android:id="@+id/wyswietl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="read"
+        android:text="Button" />
+
 
 </LinearLayout>

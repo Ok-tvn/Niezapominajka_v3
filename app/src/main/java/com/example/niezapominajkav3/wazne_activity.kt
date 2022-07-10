@@ -7,11 +7,9 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import java.io.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +23,9 @@ class wazne_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wazne)
 
+        var wyswietlanie_btn = findViewById<Button>(R.id.wyswietl_btn);
+        wyswietlanie_btn.isVisible=false;
+        wyswietlanie_btn.performClick();
 
         // creating TextView programmatically
         val tv_dynamic = TextView(this)
