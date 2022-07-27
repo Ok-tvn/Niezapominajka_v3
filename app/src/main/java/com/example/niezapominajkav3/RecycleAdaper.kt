@@ -29,6 +29,10 @@ class RecycleAdaper(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ItemsViewModel.text
 
+        holder.dataView.text = ItemsViewModel.data
+
+        holder.godzinaView.text = ItemsViewModel.godzina
+
     }
 
     // return the number of the items in the list
@@ -40,5 +44,7 @@ class RecycleAdaper(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageview)
         val textView: TextView = itemView.findViewById(R.id.textView)
+        val dataView: TextView = itemView.findViewById(R.id.data)
+        val godzinaView: TextView = itemView.findViewById(R.id.godzina)
     }
 }

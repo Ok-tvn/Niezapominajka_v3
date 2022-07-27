@@ -28,6 +28,19 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/godzina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

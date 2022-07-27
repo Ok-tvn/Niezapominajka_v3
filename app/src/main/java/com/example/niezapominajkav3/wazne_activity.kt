@@ -4,33 +4,37 @@ import ItemsViewModel
 import RecycleAdaper
 import android.content.Context
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import java.io.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.io.*
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 class wazne_activity : AppCompatActivity() {
 
     private var et: EditText? = null
     private val file = "mytextfile.txt"
+    var temp = "";
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wazne)
 
+
+
         var wyswietlanie_btn = findViewById<Button>(R.id.wyswietl_btn);
         wyswietlanie_btn.isVisible=false;
         wyswietlanie_btn.performClick();
 
-        // creating TextView programmatically
-        val tv_dynamic = TextView(this)
-        tv_dynamic.textSize = 20f
-        tv_dynamic.text = "This is a dynamic TextView generated programmatically in Kotlin"
+        //creating TextView programmatically
+        //val tv_dynamic = TextView(this)
+        //tv_dynamic.textSize = 20f
+        //tv_dynamic.text = "This is a dynamic TextView generated programmatically in Kotlin"
 
         // add TextView to LinearLayout
         //ll_main_layout.addView(tv_dynamic)
@@ -42,19 +46,49 @@ class wazne_activity : AppCompatActivity() {
         recyclerview.layoutManager = LinearLayoutManager(this)
 
         // ArrayList of class ItemsViewModel
-        val data = ArrayList<ItemsViewModel>()
+        val dane = ArrayList<ItemsViewModel>()
 
         // This loop will create 20 Views containing
         // the image with the count of view
-        for (i in 1..20) {
+        /*for (i in 1..3) {
             data.add(ItemsViewModel(R.drawable.bell, "Item " + i))
+        }*/
+
+        var string = temp.toString();
+        var lines = string.lines();
+        var nazwa = " ";
+        var data = " ";
+        var godzina = " ";
+        lines.forEach{
+            /*if(it.contains("Wazne: true")){
+                //data.add(ItemsViewModel(R.drawable.bell, it))
+                if(it.contains("Nazwa")){
+                    var nazwa = it.split("Nazwa:")[1]
+                    data.add(ItemsViewModel(R.drawable.bell, nazwa.toString()))
+                }
+            }*/
+            if(it.contains("Nazwa")){
+                nazwa = it.split("Nazwa:")[1]
+            }else if(it.contains("Data")) {
+                data = it.split("Data:")[1]
+            }else if(it.contains("Godzina")) {
+                godzina = it.split("Godzina:")[1]
+            }else if(it.contains("Wazne: true")){
+                dane.add(ItemsViewModel(R.drawable.stokrotka, nazwa.toString(), data.toString(), godzina.toString()))
+            }
+            //dane.add(ItemsViewModel(R.drawable.bell, it, data.toString(), godzina.toString()))
         }
 
         // This will pass the ArrayList to our Adapter
-        val adapter = RecycleAdaper(data)
+        val adapter = RecycleAdaper(dane)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
+
+        /*Toast.makeText(
+            baseContext, temp,
+            Toast.LENGTH_SHORT
+        ).show()*/
 
     }
 
@@ -63,18 +97,18 @@ class wazne_activity : AppCompatActivity() {
         try {
             val fin = openFileInput(file)
             var c: Int
-            var temp = ""
+            temp = "";
             while (fin.read().also { c = it } != -1) {
                 charset("UTF-8")
                 temp = temp + Character.toString(c.toChar())
             }
-            et!!.setText(temp)
-            File(file).forEachLine {
+           //et!!.setText(temp)
+            /*File(file).forEachLine {
                 if(it=="nazwa"){
                     println(it.split(" ").filter { it != "nazwa:" }.joinToString(" "))
 
                 }
-            }
+            }*/
             Toast.makeText(
                 baseContext, "file read",
                 Toast.LENGTH_SHORT
