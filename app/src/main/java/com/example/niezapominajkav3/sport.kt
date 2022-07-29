@@ -15,7 +15,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class wazne_activity : AppCompatActivity() {
+class sport : AppCompatActivity() {
 
     private var et: EditText? = null
     private val file = "mytextfile.txt"
@@ -50,7 +50,7 @@ class wazne_activity : AppCompatActivity() {
                 data = it.split("Data:")[1]
             }else if(it.contains("Godzina")) {
                 godzina = it.split("Godzina:")[1]
-            }else if(it.contains("Wazne: true")){
+            }else if(it.contains("Kategoria: Sport")){
                 dane.add(ItemsViewModel(R.drawable.stokrotka, nazwa.toString(), data.toString(), godzina.toString()))
             }
             //dane.add(ItemsViewModel(R.drawable.bell, it, data.toString(), godzina.toString()))

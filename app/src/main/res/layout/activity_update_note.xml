@@ -24,11 +24,10 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="15dp"
-            android:text="Stwórz nowe przypomnienie"
+            android:text="Edytuj przypomnienie"
             android:textColor="@color/white"
             android:textSize="30dp">
         </TextView>
-
         <EditText
             android:id="@+id/editTextNazwa"
             android:layout_width="match_parent"
@@ -65,6 +64,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -78,8 +78,8 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="15dp"
             android:text="Godzina"
-            android:textColor="@color/black">
-        </TextView>
+            android:textColor="@color/black"></TextView>
+
         <TextView
             android:id="@+id/godzina_wynik"
             android:layout_width="wrap_content"
@@ -92,78 +92,104 @@
             android:text="Wybierz Godzine"
             android:textColor="@color/black"
             android:textSize="25dp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:text="Ważne"
                 android:textColor="@color/black"
-                android:textSize="15dp"
-                android:layout_marginLeft="5dp">
-            </TextView>
+                android:textSize="15dp"></TextView>
 
             <CheckBox
                 android:id="@+id/checkbox_wazne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:textColor="@color/black"
-                android:shadowColor="@color/black"
                 android:buttonTint="@color/black"
-                android:outlineAmbientShadowColor="@color/black">
-            </CheckBox>
+                android:outlineAmbientShadowColor="@color/black"
+                android:shadowColor="@color/black"
+                android:textColor="@color/black"></CheckBox>
 
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginBottom="1dp"
             android:text="Kategoria"
-            android:textColor="@color/black">
-        </TextView>
+            android:textColor="@color/black"></TextView>
 
         <Spinner
             android:id="@+id/spinner_dodawanie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp">
-        </Spinner>
+            android:layout_marginLeft="5dp"></Spinner>
 
         <EditText
             android:id="@+id/Opis_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="Opis"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
             android:inputType="textMultiLine"
-            android:layout_marginTop="5dp">
-        </EditText>
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"></EditText>
 
 
     </LinearLayout>
-    <Button
-        android:id="@+id/zapisz_btn"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:layout_margin="10dp"
-        android:clickable="true"
-        android:background="@drawable/przycisk_wyloguj"
-        android:text="Zapisz"
-        android:textColor="#00ff00"
-        android:textSize="30dp"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-    </Button>
+
+        <Button
+            android:id="@+id/zapisz_btn"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/przycisk_wyloguj"
+            android:clickable="true"
+            android:padding="25dp"
+            android:text="Zapisz"
+            android:textColor="#00ff00"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></Button>
+
+        <Button
+            android:id="@+id/usun_btn"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/przycisk_wyloguj"
+            android:clickable="true"
+            android:padding="25dp"
+            android:text="Usun"
+            android:textColor="#ff0c0c"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></Button>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".szkola">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recylerview_wazne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="5"
+            tools:listitem="@layout/card_view_design" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/wyswietl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="read"
+        android:text="Button" />
+
+
+</LinearLayout>

@@ -1,31 +1,41 @@
 package com.example.niezapominajkav3
 
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Context
-import android.graphics.Bitmap
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.text.TextUtils.indexOf
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.niezapominajkav3.databinding.ActivityDodawanieBinding
+import com.example.niezapominajkav3.databinding.ActivityUpdateNoteBinding
 import com.example.niezapominajkav3.db.ReminderDatabase
 import com.example.niezapominajkav3.db.ReminderEntity
+import com.example.niezapominajkav3.utils.Constants.BUNDLE_REMINDER_ID
 import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE
 import com.google.android.material.snackbar.Snackbar
-import java.io.BufferedWriter
-import java.io.FileOutputStream
-import java.io.IOException
-import java.io.OutputStreamWriter
-import java.nio.charset.StandardCharsets
 import java.text.SimpleDateFormat
 import java.util.*
 
+class UpdateNote : AppCompatActivity() {
 
-class dodawanie : AppCompatActivity() {
+    private lateinit var binding: ActivityUpdateNoteBinding
+    private val noteDB: ReminderDatabase by lazy {
+        Room.databaseBuilder(this, ReminderDatabase::class.java, REMINDER_DATABASE)
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    private lateinit var noteEntity: ReminderEntity
+    private var noteId = 0
+    private var defaultTitle = ""
+    private var defaultDate = ""
+    private var defaultTime = ""
+    private var defaultImportant = ""
+    private var defaultCategory = ""
+    private var defaultDesc = ""
 
     var textview_date: TextView? = null
     var cal = Calendar.getInstance()
@@ -36,34 +46,44 @@ class dodawanie : AppCompatActivity() {
     lateinit var checkbox_wazne: CheckBox
     lateinit var spinner_dodawanie: Spinner
 
-    lateinit var binding: ActivityDodawanieBinding
-    private val noteDB : ReminderDatabase by lazy {
-        Room.databaseBuilder(this,ReminderDatabase::class.java,REMINDER_DATABASE)
-            .allowMainThreadQueries()
-            .fallbackToDestructiveMigration()
-            .build()
-    }
-    private lateinit var noteEntity: ReminderEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityDodawanieBinding.inflate(layoutInflater)
+        binding = ActivityUpdateNoteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        intent.extras?.let {
+            noteId = it.getInt(BUNDLE_REMINDER_ID)
+        }
+
         binding.apply {
+            defaultTitle=noteDB.doa().getReminder(noteId).reminderTitle
+            defaultDate=noteDB.doa().getReminder(noteId).reminderDate
+            defaultTime=noteDB.doa().getReminder(noteId).reminderTime
+            defaultImportant=noteDB.doa().getReminder(noteId).reminderImportant
+            defaultCategory=noteDB.doa().getReminder(noteId).reminderCategory
+            defaultDesc=noteDB.doa().getReminder(noteId).reminderDescription
 
+            editTextNazwa.setText(defaultTitle)
+            dataWynik.setText(defaultDate)
+            godzinaWynik.setText(defaultTime)
+            spinnerDodawanie.setSelection(2)
+            checkboxWazne.isChecked=defaultImportant.toBoolean();
+            OpisTxt.setText(defaultDesc)
 
-            dataWynik.text = "--/--/----"
+            usunBtn.setOnClickListener {
+                noteEntity= ReminderEntity(noteId,defaultTitle,defaultDate,defaultTime,defaultImportant,defaultCategory,defaultDesc)
+                noteDB.doa().deleteReminder(noteEntity)
+                finish()
+            }
 
             zapiszBtn.setOnClickListener {
                 val title = editTextNazwa.text.toString()
-                val date = data_wynik.text.toString()
-                val time = godzina_wynik.text.toString()
-                val important = checkbox_wazne.isChecked().toString()
-                val category = spinner_dodawanie.getSelectedItem().toString()
+                val date = dataWynik.text.toString()
+                val time = godzinaWynik.text.toString()
+                val important = checkboxWazne.isChecked().toString()
+                val category = spinnerDodawanie.getSelectedItem().toString()
                 val desc =  OpisTxt.text.toString()
-
-
 
                 if(title.isNotEmpty() || desc.isNotEmpty()){
                     noteEntity= ReminderEntity(0,title,date,time,important,category,desc)
@@ -75,7 +95,6 @@ class dodawanie : AppCompatActivity() {
                 }
             }
         }
-
         editTextNazwa = findViewById(R.id.editTextNazwa)
         data_wynik = findViewById(R.id.data_wynik)
         godzina_wynik = findViewById(R.id.godzina_wynik)
@@ -106,7 +125,7 @@ class dodawanie : AppCompatActivity() {
         // when you click on the button, show DatePickerDialog that is set with OnDateSetListener
         textview_date!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
-                DatePickerDialog(this@dodawanie,
+                DatePickerDialog(this@UpdateNote,
                     dateSetListener,
                     // set DatePickerDialog to point to today's date when it loads up
                     cal.get(Calendar.YEAR),
@@ -124,8 +143,8 @@ class dodawanie : AppCompatActivity() {
             }
             TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
-    }
 
+    }
     private fun updateDateInView() {
         val myFormat = "MM/dd/yyyy" // mention the format you need
         val sdf = SimpleDateFormat  (myFormat, Locale.US)

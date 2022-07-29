@@ -263,6 +263,8 @@
 
 
             <LinearLayout
+                android:id="@+id/figura_jeden"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -314,6 +316,8 @@
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/figura_dwa"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -374,6 +378,8 @@
 
 
             <LinearLayout
+                android:id="@+id/figura_trzy"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -427,6 +433,8 @@
 
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/figura_cztery"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
