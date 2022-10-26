@@ -1,11 +1,58 @@
 package com.example.niezapominajkav3
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
+import com.example.niezapominajkav3.adapter.NoteAdapter
+import com.example.niezapominajkav3.databinding.ActivityCodziennoscBinding
+import com.example.niezapominajkav3.db.ReminderDatabase2
+import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE2
+
 
 class dzisiejsze : AppCompatActivity() {
+
+    lateinit var binding: ActivityCodziennoscBinding
+    private val noteDB : ReminderDatabase2 by lazy {
+        Room.databaseBuilder(this,ReminderDatabase2::class.java,REMINDER_DATABASE2)
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    private val noteAdapter by lazy { NoteAdapter() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dzisiejsze)
+        binding=ActivityCodziennoscBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+
+    override fun onResume(){
+        super.onResume()
+        checkItem()
+    }
+    private fun checkItem(){
+        binding.apply {
+            val intent_dzisiejsze = getIntent();
+            val message = intent_dzisiejsze.getStringExtra("data")
+            if(noteDB.doa().getAllRemindersData(message.toString()).isNotEmpty()){
+                rvNoteList.visibility=View.VISIBLE
+                tvEmptyText.visibility=View.GONE
+                noteAdapter.differ.submitList(noteDB.doa().getAllRemindersData(message.toString()))
+                setupRecyclerView()
+            }else{
+                rvNoteList.visibility=View.GONE
+                tvEmptyText.visibility=View.VISIBLE
+            }
+        }
+    }
+
+    private fun setupRecyclerView(){
+        binding.rvNoteList.apply {
+            layoutManager=LinearLayoutManager(this@dzisiejsze)
+            adapter=noteAdapter
+        }
     }
 }

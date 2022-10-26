@@ -14,8 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.niezapominajkav3.adapter.NoteAdapter
 import com.example.niezapominajkav3.databinding.ActivityCodziennoscBinding
-import com.example.niezapominajkav3.db.ReminderDatabase
-import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE
+import com.example.niezapominajkav3.db.ReminderDatabase2
+import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE2
 import java.io.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -24,12 +24,13 @@ import kotlin.collections.ArrayList
 class codziennosc : AppCompatActivity() {
 
     lateinit var binding: ActivityCodziennoscBinding
-    private val noteDB : ReminderDatabase by lazy {
-        Room.databaseBuilder(this,ReminderDatabase::class.java,REMINDER_DATABASE)
+    private val noteDB : ReminderDatabase2 by lazy {
+        Room.databaseBuilder(this,ReminderDatabase2::class.java,REMINDER_DATABASE2)
             .allowMainThreadQueries()
             .fallbackToDestructiveMigration()
             .build()
     }
+
     private val noteAdapter by lazy { NoteAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,10 +46,10 @@ class codziennosc : AppCompatActivity() {
 
     private fun checkItem(){
         binding.apply {
-            if(noteDB.doa().getAllReminders().isNotEmpty()){
+            if(noteDB.doa().getAllRemindersWhere("2").isNotEmpty()){
                 rvNoteList.visibility=View.VISIBLE
                 tvEmptyText.visibility=View.GONE
-                noteAdapter.differ.submitList(noteDB.doa().getAllReminders())
+                noteAdapter.differ.submitList(noteDB.doa().getAllRemindersWhere("2"))
                 setupRecyclerView()
             }else{
                 rvNoteList.visibility=View.GONE

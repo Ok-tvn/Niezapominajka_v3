@@ -3,10 +3,10 @@ package com.example.niezapominajkav3.db
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.niezapominajkav3.utils.Constants.REMINDER_TABLE
+import com.example.niezapominajkav3.utils.Constants.REMINDER_TABLE2
 
-@Entity(tableName = REMINDER_TABLE)
-data class ReminderEntity(
+@Entity(tableName = REMINDER_TABLE2)
+data class ReminderEntity2(
     @PrimaryKey(autoGenerate = true)
     val reminderID : Int,
     @ColumnInfo(name = "Nazwa")
@@ -20,5 +20,7 @@ data class ReminderEntity(
     @ColumnInfo(name = "Kategoria")
     val reminderCategory : String,
     @ColumnInfo(name = "Opis")
-    val reminderDescription : String
+    val reminderDescription : String,
+    @ColumnInfo(name = "Wykonane")
+    val reminderDone : String
 )

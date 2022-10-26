@@ -51,7 +51,8 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginRight="5dp"
-                    android:background="@drawable/lewo">
+                    android:background="@drawable/lewo"
+                    android:id="@+id/button_lewo">
 
                 </ImageButton>
 
@@ -75,6 +76,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:text="Dzisiaj"
+                                android:id="@+id/dzisiaj"
                                 android:textColor="@color/white">
 
                             </TextView>
@@ -87,7 +89,8 @@
                             android:gravity="center"
                             android:textColor="@color/white"
                             android:text="4.03.2022"
-                            android:textSize="45dp">
+                            android:textSize="45dp"
+                            android:id="@+id/data_glowny">
 
                         </TextView>
                     </LinearLayout>
@@ -97,6 +100,7 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginRight="5dp"
+                    android:id="@+id/button_prawo"
                     android:background="@drawable/prawo"></ImageButton>
             </LinearLayout>
         </RelativeLayout>
@@ -170,6 +174,7 @@
                             android:layout_centerInParent="true"
                             android:text="Ilość powiadomień: 4"
                             android:textSize="12dp"
+                            android:id="@+id/ilosc_wazne"
                             android:layout_marginLeft="15dp"/>
 
                         <TextView
@@ -179,6 +184,7 @@
                             android:layout_centerInParent="true"
                             android:text="W tym niewykonane: 1"
                             android:textSize="12dp"
+                            android:id="@+id/niewykonane_wazne"
                             android:layout_marginLeft="5dp"/>
 
                     </LinearLayout>
@@ -189,6 +195,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/dzisiejsze_linear"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
                 app:layout_constraintVertical_bias="1.0">
@@ -226,6 +233,7 @@
                             android:layout_centerInParent="true"
                             android:text="Ilość powiadomień: 2"
                             android:textSize="12dp"
+                            android:id="@+id/ilosc_dzisiejsze"
                             android:layout_marginLeft="15dp"/>
 
                         <TextView
@@ -235,6 +243,7 @@
                             android:layout_centerInParent="true"
                             android:text="W tym niewykonane: 2"
                             android:textSize="12dp"
+                            android:id="@+id/niewykonane_dzisiejsze"
                             android:layout_marginLeft="5dp"/>
 
                     </LinearLayout>

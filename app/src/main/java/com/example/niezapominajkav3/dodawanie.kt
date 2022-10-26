@@ -12,9 +12,9 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.niezapominajkav3.databinding.ActivityDodawanieBinding
-import com.example.niezapominajkav3.db.ReminderDatabase
-import com.example.niezapominajkav3.db.ReminderEntity
-import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE
+import com.example.niezapominajkav3.db.ReminderDatabase2
+import com.example.niezapominajkav3.db.ReminderEntity2
+import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE2
 import com.google.android.material.snackbar.Snackbar
 import java.io.BufferedWriter
 import java.io.FileOutputStream
@@ -37,13 +37,13 @@ class dodawanie : AppCompatActivity() {
     lateinit var spinner_dodawanie: Spinner
 
     lateinit var binding: ActivityDodawanieBinding
-    private val noteDB : ReminderDatabase by lazy {
-        Room.databaseBuilder(this,ReminderDatabase::class.java,REMINDER_DATABASE)
+    private val noteDB : ReminderDatabase2 by lazy {
+        Room.databaseBuilder(this,ReminderDatabase2::class.java,REMINDER_DATABASE2)
             .allowMainThreadQueries()
             .fallbackToDestructiveMigration()
             .build()
     }
-    private lateinit var noteEntity: ReminderEntity
+    private lateinit var noteEntity: ReminderEntity2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,13 +60,13 @@ class dodawanie : AppCompatActivity() {
                 val date = data_wynik.text.toString()
                 val time = godzina_wynik.text.toString()
                 val important = checkbox_wazne.isChecked().toString()
-                val category = spinner_dodawanie.getSelectedItem().toString()
+                val category = spinner_dodawanie.getSelectedItemPosition().toString();
                 val desc =  OpisTxt.text.toString()
 
 
 
                 if(title.isNotEmpty() || desc.isNotEmpty()){
-                    noteEntity= ReminderEntity(0,title,date,time,important,category,desc)
+                    noteEntity = ReminderEntity2(0,title,date,time,important,category,desc,"false")
                     noteDB.doa().insertReminder(noteEntity)
                     finish()
                 }
