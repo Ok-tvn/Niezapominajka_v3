@@ -205,5 +205,6 @@ class glowna : AppCompatActivity() {
         }else{
             szkola_prc_txt.text = "0%"
         }
+        //sa
     }
 }
