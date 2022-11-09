@@ -43,6 +43,7 @@ class glowna : AppCompatActivity() {
         var wazne_niewykonane_txt = findViewById<TextView>(R.id.niewykonane_wazne)
         var dzisiaj_wszystkie_txt = findViewById<TextView>(R.id.ilosc_dzisiejsze)
         var dzisiaj_niewykonane_txt = findViewById<TextView>(R.id.niewykonane_dzisiejsze)
+        var szkola_prc_txt = findViewById<TextView>(R.id.szkola_prc_txt)
 
 
         //Naciśnięcie na ważne
@@ -194,6 +195,15 @@ class glowna : AppCompatActivity() {
         }else{
             dzisiaj_wszystkie_txt.text="Ilość powiadomień: 0"
             dzisiaj_niewykonane_txt.text="W tym niewykonane: 0"
+        }
+
+        if(noteDB.doa().getAllRemindersWhere("3").isNotEmpty()){
+            val szkola_wszystkie=noteDB.doa().getAllRemindersWhere("3").size
+            val wszystkie_wszystkie=noteDB.doa().getAllReminders().size
+            val procenty = (1/2)*100
+            szkola_prc_txt.text=procenty.toString()+"%"
+        }else{
+            szkola_prc_txt.text = "0%"
         }
     }
 }
