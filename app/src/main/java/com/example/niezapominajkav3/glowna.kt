@@ -44,6 +44,9 @@ class glowna : AppCompatActivity() {
         var dzisiaj_wszystkie_txt = findViewById<TextView>(R.id.ilosc_dzisiejsze)
         var dzisiaj_niewykonane_txt = findViewById<TextView>(R.id.niewykonane_dzisiejsze)
         var szkola_prc_txt = findViewById<TextView>(R.id.szkola_prc_txt)
+        var sport_prc_txt = findViewById<TextView>(R.id.sport_prc_txt)
+        var praca_prc_txt = findViewById<TextView>(R.id.praca_prc_txt)
+        var codziennosc_prc_txt = findViewById<TextView>(R.id.codziennosc_prc_txt)
 
 
         //Naciśnięcie na ważne
@@ -200,11 +203,34 @@ class glowna : AppCompatActivity() {
         if(noteDB.doa().getAllRemindersWhere("3").isNotEmpty()){
             val szkola_wszystkie=noteDB.doa().getAllRemindersWhere("3").size
             val wszystkie_wszystkie=noteDB.doa().getAllReminders().size
-            val procenty = (1/2)*100
-            szkola_prc_txt.text=procenty.toString()+"%"
+            val procenty = (szkola_wszystkie.toFloat()/wszystkie_wszystkie.toFloat())*100f
+            szkola_prc_txt.text=procenty.toInt().toString()+"%"
         }else{
             szkola_prc_txt.text = "0%"
         }
-        //sa
+        if(noteDB.doa().getAllRemindersWhere("1").isNotEmpty()){
+            val szkola_wszystkie=noteDB.doa().getAllRemindersWhere("1").size
+            val wszystkie_wszystkie=noteDB.doa().getAllReminders().size
+            val procenty = (szkola_wszystkie.toFloat()/wszystkie_wszystkie.toFloat())*100f
+            sport_prc_txt.text=procenty.toInt().toString()+"%"
+        }else{
+            sport_prc_txt.text = "0%"
+        }
+        if(noteDB.doa().getAllRemindersWhere("2").isNotEmpty()){
+            val szkola_wszystkie=noteDB.doa().getAllRemindersWhere("2").size
+            val wszystkie_wszystkie=noteDB.doa().getAllReminders().size
+            val procenty = (szkola_wszystkie.toFloat()/wszystkie_wszystkie.toFloat())*100f
+            codziennosc_prc_txt.text=procenty.toInt().toString()+"%"
+        }else{
+            codziennosc_prc_txt.text = "0%"
+        }
+        if(noteDB.doa().getAllRemindersWhere("0").isNotEmpty()){
+            val szkola_wszystkie=noteDB.doa().getAllRemindersWhere("0").size
+            val wszystkie_wszystkie=noteDB.doa().getAllReminders().size
+            val procenty = (szkola_wszystkie.toFloat()/wszystkie_wszystkie.toFloat())*100f
+            praca_prc_txt.text=procenty.toInt().toString()+"%"
+        }else{
+            praca_prc_txt.text = "0%"
+        }
     }
 }
