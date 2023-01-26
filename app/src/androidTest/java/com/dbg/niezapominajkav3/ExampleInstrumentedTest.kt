@@ -1,4 +1,4 @@
-package com.example.niezapominajkav3
+package com.dbg.niezapominajkav3
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

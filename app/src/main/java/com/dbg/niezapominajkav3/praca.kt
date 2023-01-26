@@ -1,27 +1,20 @@
-package com.example.niezapominajkav3
+package com.dbg.niezapominajkav3
 
-import ItemsViewModel
-import RecycleAdaper
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
-import com.example.niezapominajkav3.adapter.NoteAdapter
-import com.example.niezapominajkav3.databinding.ActivityCodziennoscBinding
-import com.example.niezapominajkav3.db.ReminderDatabase2
-import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE2
+import com.dbg.niezapominajkav3.adapter.NoteAdapter
+import com.dbg.niezapominajkav3.databinding.ActivityCodziennoscBinding
+import com.dbg.niezapominajkav3.db.ReminderDatabase2
+import com.dbg.niezapominajkav3.utils.Constants.REMINDER_DATABASE2
 import java.io.*
 import java.util.*
-import kotlin.collections.ArrayList
 
 
-class codziennosc : AppCompatActivity() {
+class praca : AppCompatActivity() {
 
     lateinit var binding: ActivityCodziennoscBinding
     private val noteDB : ReminderDatabase2 by lazy {
@@ -46,10 +39,10 @@ class codziennosc : AppCompatActivity() {
 
     private fun checkItem(){
         binding.apply {
-            if(noteDB.doa().getAllRemindersWhere("2").isNotEmpty()){
+            if(noteDB.doa().getAllRemindersWhere("0").isNotEmpty()){
                 rvNoteList.visibility=View.VISIBLE
                 tvEmptyText.visibility=View.GONE
-                noteAdapter.differ.submitList(noteDB.doa().getAllRemindersWhere("2"))
+                noteAdapter.differ.submitList(noteDB.doa().getAllRemindersWhere("0"))
                 setupRecyclerView()
             }else{
                 rvNoteList.visibility=View.GONE
@@ -60,7 +53,7 @@ class codziennosc : AppCompatActivity() {
 
     private fun setupRecyclerView(){
         binding.rvNoteList.apply {
-            layoutManager=LinearLayoutManager(this@codziennosc)
+            layoutManager=LinearLayoutManager(this@praca)
             adapter=noteAdapter
         }
     }

@@ -268,7 +268,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintVertical_bias="1.0"
+            android:gravity="center">
 
 
             <LinearLayout
@@ -277,7 +278,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/figura_jeden"
@@ -385,7 +385,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintVertical_bias="1.0">
+            app:layout_constraintVertical_bias="1.0"
+            android:gravity="center">
 
 
             <LinearLayout
@@ -394,7 +395,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/figura_trzy"
@@ -405,8 +405,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:background="@drawable/figura_trzy_kolo"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginVertical="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="50dp"
                     app:layout_constraintVertical_bias="1.0">

@@ -1,9 +1,9 @@
-package com.example.niezapominajkav3.db
+package com.dbg.niezapominajkav3.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.niezapominajkav3.utils.Constants.REMINDER_TABLE2
+import com.dbg.niezapominajkav3.utils.Constants.REMINDER_TABLE2
 
 @Entity(tableName = REMINDER_TABLE2)
 data class ReminderEntity2(

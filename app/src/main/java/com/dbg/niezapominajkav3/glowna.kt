@@ -1,17 +1,15 @@
-package com.example.niezapominajkav3
+package com.dbg.niezapominajkav3
 
 import android.content.Intent
-import android.database.Cursor
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.niezapominajkav3.db.ReminderDatabase2
-import com.example.niezapominajkav3.utils.Constants
+import com.dbg.niezapominajkav3.db.ReminderDatabase2
+import com.dbg.niezapominajkav3.utils.Constants
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.*
+
 
 
 class glowna : AppCompatActivity() {

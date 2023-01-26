@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.niezapominajkav3.R
+import com.dbg.niezapominajkav3.R
 
 class RecycleAdaper(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<RecycleAdaper.ViewHolder>() {
 

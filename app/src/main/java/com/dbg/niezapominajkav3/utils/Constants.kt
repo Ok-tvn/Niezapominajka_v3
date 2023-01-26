@@ -1,4 +1,4 @@
-package com.example.niezapominajkav3.utils
+package com.dbg.niezapominajkav3.utils
 
 object Constants {
     const val REMINDER_TABLE2= "reminder_table2"

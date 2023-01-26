@@ -11,11 +11,11 @@ android {
         viewBinding true
     }
     defaultConfig {
-        applicationId "com.example.niezapominajkav3"
+        applicationId "com.dbg.niezapominajkav3"
         minSdk 28
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,7 +36,7 @@ android {
     buildFeatures{
         viewBinding true
     }
-    namespace 'com.example.niezapominajkav3'
+    namespace 'com.dbg.niezapominajkav3'
 }
 
 dependencies {

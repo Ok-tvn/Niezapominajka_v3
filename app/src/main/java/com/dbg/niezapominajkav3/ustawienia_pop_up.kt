@@ -1,10 +1,9 @@
-package com.example.niezapominajkav3
+package com.dbg.niezapominajkav3
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout

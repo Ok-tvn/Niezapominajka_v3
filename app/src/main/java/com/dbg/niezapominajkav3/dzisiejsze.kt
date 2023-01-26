@@ -1,14 +1,14 @@
-package com.example.niezapominajkav3
+package com.dbg.niezapominajkav3
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
-import com.example.niezapominajkav3.adapter.NoteAdapter
-import com.example.niezapominajkav3.databinding.ActivityCodziennoscBinding
-import com.example.niezapominajkav3.db.ReminderDatabase2
-import com.example.niezapominajkav3.utils.Constants.REMINDER_DATABASE2
+import com.dbg.niezapominajkav3.adapter.NoteAdapter
+import com.dbg.niezapominajkav3.databinding.ActivityCodziennoscBinding
+import com.dbg.niezapominajkav3.db.ReminderDatabase2
+import com.dbg.niezapominajkav3.utils.Constants.REMINDER_DATABASE2
 
 
 class dzisiejsze : AppCompatActivity() {

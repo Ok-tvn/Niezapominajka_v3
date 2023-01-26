@@ -1,4 +1,4 @@
-package com.example.niezapominajkav3.adapter
+package com.dbg.niezapominajkav3.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,15 +8,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.niezapominajkav3.UpdateNote
-import com.example.niezapominajkav3.databinding.ItemNoteBinding
-import com.example.niezapominajkav3.db.ReminderEntity2
-import com.example.niezapominajkav3.utils.Constants.BUNDLE_REMINDER_ID2
+import com.dbg.niezapominajkav3.UpdateNote
+import com.dbg.niezapominajkav3.databinding.ItemNoteBinding
+import com.dbg.niezapominajkav3.db.ReminderEntity2
+import com.dbg.niezapominajkav3.utils.Constants.BUNDLE_REMINDER_ID2
 
 class NoteAdapter : RecyclerView.Adapter<NoteAdapter.ViewHolder>(){
     private lateinit var binding: ItemNoteBinding
     private lateinit var context: Context
 
+    fun deleteItem(i: Int){
+
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         binding = ItemNoteBinding.inflate(inflater, parent, false)

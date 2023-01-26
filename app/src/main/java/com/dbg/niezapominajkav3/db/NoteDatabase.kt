@@ -1,4 +1,4 @@
-package com.example.niezapominajkav3.db
+package com.dbg.niezapominajkav3.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

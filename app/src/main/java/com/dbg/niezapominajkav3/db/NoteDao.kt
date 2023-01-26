@@ -1,7 +1,7 @@
-package com.example.niezapominajkav3.db
+package com.dbg.niezapominajkav3.db
 
 import androidx.room.*
-import com.example.niezapominajkav3.utils.Constants.REMINDER_TABLE2
+import com.dbg.niezapominajkav3.utils.Constants.REMINDER_TABLE2
 
 @Dao
 interface ReminderDao2 {
@@ -46,4 +46,7 @@ interface ReminderDao2 {
 
     @Query("SELECT * FROM $REMINDER_TABLE2 WHERE Data LIKE :dzisiaj AND Wykonane LIKE :wykonanie")
     fun getNumberNotDone(dzisiaj : String,wykonanie : String) : List<ReminderEntity2>
+
+    @Query("SELECT * FROM $REMINDER_TABLE2 WHERE Data LIKE :dzisiaj AND Wykonane LIKE :wykonanie AND Kategoria LIKE :przyklad ")
+    fun getWhereDataNotDone(dzisiaj : String,wykonanie : String, przyklad: String) : List<ReminderEntity2>
 }

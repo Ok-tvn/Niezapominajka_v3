@@ -1,4 +1,4 @@
-package com.example.niezapominajkav3
+package com.dbg.niezapominajkav3
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
